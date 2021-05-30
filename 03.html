@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let arr = [];
+    //   arr = [98,27,12,45,77];
+    //   console.log(arr.length);
+    //   for ( let i = 0 ; i < 5; i++ ) {
+    //     console.log(arr[i]);
+    //   };
+    // let ice = ('草莓', '芥末', '巧克力', '辣椒', '抹茶');
+    let score = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
+        function isItemExusr(arr,tangetItem) {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === tangetItem) {
+              return true;
+            }
+          }
+          return false;
+        }
+        
+        console.log(isItemExusr(score, 50));
+        console.log(isItemExusr(score, 88));
+
+
+        let score1 = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
+        isItemExusr(score1, 52);
+        console.log(isItemExusr(score1, 50));
+        console.log(isItemExusr(score1, 88));
+        function findItenIndex(arr, targetItem) {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === targetItem) {
+              return i;
+            }
+          }
+          return -1;
+        }
+  </script>
+</body>
+</html>
