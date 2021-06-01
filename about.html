@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let car = {
+    //   make: '劳斯莱斯',
+    //   model:'幻影',
+    //   color: '银白',
+    //   passenagers: 4,
+    //   isStart: false,
+    //   fuel: 100, //100 个燃油单位；
+    //   mileage: 50000,//已经开了50000mile；
+      
+
+
+    //   drive: function( ){
+    //       this.fuel--;
+    //       this.mileage++;
+    //   },
+    //   getColor: function() {
+    //     return thie.color;
+    //   },
+    //   setColor: function(newColor) {
+    //     this.color = newColor;
+    //   }
+    // }
+    // // function drive() {
+    // //         car.fuel--;
+    // //         car.mileage++;
+    // // }
+    
+    // car.drive();
+    // console.log(car);
+
+      let person = {
+        name: '杜雨心',
+        age: 17,
+        food:100,
+        happyness: 100,
+
+        eat: function () {
+          if (this.food + 10 < 100) {
+            this.food = this.food + 10;
+            console.log('吃的挺好');
+          } else {
+              this.food = 100;
+              console.log('吃撑了，别塞了');
+          }
+        },
+        alive: function () {
+          let that = this;
+          // console.log(that);
+          let timmer = setInterval(function () {
+            // console.log(that.food);
+            this.food = this.food - 20;
+
+            if (t.food < 50 && that.food  >= 0) {
+              console.log('我饿了');
+
+            }
+            if (this.food < 0 ) { 
+              console.log('我死了，再见');
+              clearInterval(timer);
+            }
+          }, 3000)
+          
+      }
+      }
+      person.eat();
+      
+  </script>
+</body>
+</html>
