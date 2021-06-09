@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: 'alex',
+            age: 37,
+            food: 70,
+            happyness: 100,
+
+            // 人类呢，一定要吃饭，如果food > 100,那就吃不下
+            // 如果 food < 0 就会饿死
+            eat: function() {
+                // 完成 eat（吃）这个行为，每次 eat，food + 10
+                if (this.food + 10 < 100) {
+                    this.food = this.food + 10;
+                    console.log('吃的挺好');
+                } else {
+                    this.food = 100;
+                    console.log('吃撑了，别塞了');
+                }
+            },
+            // 请写这么一个方法，每隔一段时间，减少food的值，-20
+            // 一旦 food < 0 显示角色死亡
+            alive: function() {
+                // 把person对象 this指向的存储空间，起了一个叫that的名字
+                let that = this;
+                // setInterval函数，用于每间隔一定时间执行规定代码，和setTimeout相似
+                // setInterval( function, time);
+                let timer = setInterval(function() {
+                    // 作用域错误，引起的bug
+                    console.log('当前food值:' + that.food);
+                    that.food = that.food - 20;
+
+                    if (that.food < 50 && that.food >= 0) {
+                        console.log('我饿了');
+                    }
+                    if (that.food < 0) {
+                        console.log('我死了，再见');
+                        // 计时停止
+                        // 实际上，就是停止timer计时器
+                        clearInterval(timer);
+                    }
+                }, 3000)
+            }
+        }
+        person.alive();
+        // person.eat();
+        // person.eat();
+        // person.eat();
+        // person.eat();
+    </script>
+</body>
+
+</html>
